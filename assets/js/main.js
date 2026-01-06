@@ -27,6 +27,29 @@ function formatRupiah(angka) {
 }
 
 // ──────────────────────────────────────────
+// ANIMASI UNTUK PRODUK YANG BARU DI-RENDER
+// ──────────────────────────────────────────
+
+function animateNewProducts() {
+  // Cari semua produk yang belum visible
+  const newItems = document.querySelectorAll('.product-card:not(.visible)');
+  
+  newItems.forEach((el, index) => {
+    // Hanya animasi yang di/near viewport
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight + 200;
+    
+    if (inView) {
+      // Delay stagger kecil
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, index * 100); // 0.1s per item
+    }
+  });
+}
+
+
+// ──────────────────────────────────────────
 // Mobile Navigation Toggle
 // ──────────────────────────────────────────
 
@@ -89,13 +112,6 @@ function renderProducts(category = 'all') {
     });
   });
 
- // ✅ ANIMASI LANGSUNG SETELAH KLIK KATEGORI
-  // Gunakan requestAnimationFrame + delay kecil untuk DOM update
-  requestAnimationFrame(() => {
-    setTimeout(animateNewProducts, 50);
-  });
-}
-
   // Event: Klik gambar → modal
   document.querySelectorAll('.product-card img').forEach(img => {
     img.addEventListener('click', (e) => {
@@ -103,6 +119,12 @@ function renderProducts(category = 'all') {
       const product = productList.find(p => p.id === id);
       if (product) openProductModal(product);
     });
+  });
+
+// ✅ ANIMASI LANGSUNG SETELAH KLIK KATEGORI
+  // Gunakan requestAnimationFrame + delay kecil untuk DOM update
+  requestAnimationFrame(() => {
+    setTimeout(animateNewProducts, 50);
   });
 }
 
