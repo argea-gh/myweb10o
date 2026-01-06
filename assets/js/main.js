@@ -89,6 +89,13 @@ function renderProducts(category = 'all') {
     });
   });
 
+ // ✅ ANIMASI LANGSUNG SETELAH KLIK KATEGORI
+  // Gunakan requestAnimationFrame + delay kecil untuk DOM update
+  requestAnimationFrame(() => {
+    setTimeout(animateNewProducts, 50);
+  });
+}
+
   // Event: Klik gambar → modal
   document.querySelectorAll('.product-card img').forEach(img => {
     img.addEventListener('click', (e) => {
