@@ -156,7 +156,7 @@ function openProductModal(product) {
     <span class="info-label">Manfaat Utama</span>
     <ul class="benefits-list">
       ${product.benefits && product.benefits.length 
-        ? product.benefits.map(b => `<li>✅ ${b}</li>`).join('')
+        ? product.benefits.map(b => `<li>${b}</li>`).join('')
         : '<li>—</li>'
       }
     </ul>
