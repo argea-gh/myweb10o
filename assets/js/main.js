@@ -472,17 +472,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   loadCart();
   
-  // ✅ INISIALISASI ANIMASI PRODUK SAAT HALAMAN PERTAMA KALI DIMUAT
-  // Hanya jalan sekali, saat DOM siap
+  // ✅ INISIALISASI ANIMASI PRODUK SAAT HALAMAN PERTAMA KALI DIMUAT (VERSI LEBIH HALUS)
   if (document.querySelector('.products-grid')) {
-    // Tunggu sebentar agar produk sempat dirender (jika pakai renderProducts otomatis)
     setTimeout(() => {
-      document.querySelectorAll('.product-card').forEach(el => {
-        // Hanya animasi yang di viewport atau dekat
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach((el, index) => {
         const rect = el.getBoundingClientRect();
         const inView = rect.top < window.innerHeight + 200;
+        
         if (inView && !el.classList.contains('visible')) {
-          el.classList.add('visible');
+          // ✅ STAGGER ANIMASI: 0.1 detik per item
+          setTimeout(() => {
+            el.classList.add('visible');
+          }, index * 100); // 100ms = 0.1 detik
         }
       });
     }, 300);
