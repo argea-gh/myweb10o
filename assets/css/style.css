@@ -397,7 +397,9 @@ body {
 }
 
 .category-filter {
-  background-color: #eee2aa;
+  background-color: #eaf5d8;
+  border: none;
+  border-radius: 25px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
