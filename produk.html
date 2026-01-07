@@ -6,38 +6,59 @@
   <title>Produk — Herbaprima | Solusi Herbal Halal</title>
   <meta name="description" content="Daftar lengkap produk herbal halal Herbaprima: madu premium, minuman sehat, minyak herba, dan perawatan alami." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome (ikon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xOoZU6rLm3n3aF4jF7Zx2Zx5K+6RkD9Kz9yZf7q7VqZf7Vx9n5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y......" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ikon website -->
+  <link rel="icon" href="https://lh3.googleusercontent.com/d/1xp5ce29F3f-nVa_IEx925L-8YrXXbHo6" type="image/png">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <!-- ✅ HEADER (pakai template di atas) -->
+  <!-- ✅ HEADER (Sticky) -->
   <header class="header sticky">
-    <div class="container header-inner">
+    <div class="container">
+	 <div class="header-inner">
+	  <!-- Logo -->
       <a href="index.html" class="logo">
-        <img src="https://lh3.googleusercontent.com/d/1xp5ce29F3f-nVa_IEx925L-8YrXXbHo6" alt="Herbaprima Logo" />
-        <span class="site-title">Herbaprima</span>
+        <img src="https://lh3.googleusercontent.com/d/1xp5ce29F3f-nVa_IEx925L-8YrXXbHo6" alt="Herbaprima Logo" class="logo-img">
+      <span class="site-title">Herbaprima</span>
       </a>
+	  <!-- Navigation -->
       <nav class="nav-menu" id="navMenu">
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="produk.html">Produk</a></li>
           <li><a href="edukasi.html">Edukasi</a></li>
           <li><a href="tentang.html">Tentang</a></li>
-          <li><a href="https://wa.me/6282241900467" target="_blank" class="btn-whatsapp btn-header">🟢 WhatsApp</a></li>
+          <li><a href="https://wa.me/6282241900467?text=Halo%20Herbaprima%2C%20saya%20mau%20konsultasi%20gratis%20tentang%20produk%20herbal." target="_blank" class="btn-whatsapp btn-header">🟢 WhatsApp</a></li>
         </ul>
       </nav>
+
+	<!-- ✅ IKON KERANJANG (Kecil, Kanan Atas) -->
+        <div class="cart-icon" id="cartAccessBtn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartBadge">0</span>
+        </div>
+
+	<!-- ✅ MENU HAMBURGER (mobile) -->
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
+	 </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero" style="padding: 80px 0; background: linear-gradient(135deg, #f0f9f1 0%, #e8f5e9 100%);">
     <div class="container">
-      <h1 class="hero-headline">📦 Semua Produk Kami</h1>
+      <h1 class="hero-headline">Semua Produk Kami</h1>
       <p class="hero-subheadline">Solusi herbal halal untuk kesehatan harian Anda dan keluarga</p>
     </div>
   </section>
@@ -101,53 +122,51 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP & SCROLL TO TOP -->
+  <!-- ✅ FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/6282241900467" target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- MODAL & CART PANEL (sama seperti index.html) -->
+  <!-- ✅ MODAL DETAIL PRODUK -->
   <div class="modal" id="productModal">
     <div class="modal-content">
       <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-body" id="modalBody">
+        <!-- Diisi oleh JS -->
+      </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" id="modalClose2">Tutup</button>
       </div>
     </div>
   </div>
 
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>Keranjang Saya</h3>
-      <button class="cart-close" id="cartClose">&times;</button>
-    </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total">Total: <span id="cartTotal">Rp0</span></div>
-      <a href="https://wa.me/6282241900467" target="_blank" class="btn btn-primary" id="checkoutBtn">Lanjut ke WhatsApp</a>
+<!-- ✅ KERANJANG BOTTOM SHEET (Sudah ada di kode Anda) -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>Keranjang Saya</h3>
+    <button class="cart-close" id="cartClose">&times;</button>
+  </div>
+  
+  <!-- ✅ WRAPPER KONTEN -->
+  <div class="cart-content">
+    <div class="cart-items" id="cartItems">
+      <!-- Diisi oleh JS -->
     </div>
   </div>
+  
+  <!-- ✅ FOOTER STICKY (Baru) -->
+  <div class="cart-footer-sticky">
+    <div class="cart-total-sticky">Total: <span id="cartTotalSticky">Rp0</span></div>
+    <a href="https://wa.me/6282241900467" target="_blank" class="btn btn-primary" id="checkoutBtnSticky">
+      📲 Lanjut ke WhatsApp
+    </a>
+  </div>
+</div>
+	
   <div class="cart-overlay" id="cartOverlay"></div>
 
-  <!-- SCRIPTS -->
+  <!-- ✅ SCRIPTS -->
   <script src="assets/js/products.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    // Render produk saat halaman produk dimuat
-    document.addEventListener('DOMContentLoaded', () => {
-      // Render semua produk (tanpa rekomendasi khusus)
-      renderProducts('all');
-
-      // Filter kategori
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          renderProducts(btn.dataset.category);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
