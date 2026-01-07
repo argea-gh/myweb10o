@@ -397,7 +397,7 @@ body {
 }
 
 .category-filter {
-  background-color: var(--gold-light);
+  background-color: var(--gold);
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
