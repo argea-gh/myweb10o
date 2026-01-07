@@ -397,11 +397,13 @@ body {
 }
 
 .category-filter {
+  background-color: var(--gold-light);
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 20px;
-}
+  padding: 12px;
+  }
 
 .filter-btn {
   padding: 8px 20px;
