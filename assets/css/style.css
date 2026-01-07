@@ -483,12 +483,12 @@ body {
 }
 
 .product-card .category {
-  font-size: 0.8rem;
-  color: #9ca3af;
+  font-size: 0.9rem;
+  color: var(--text-dark);
 }
 
 .product-card .btn-add {
-  width: 100%;
+  width: fit-content;
   margin-top: 12px;
 }
 
