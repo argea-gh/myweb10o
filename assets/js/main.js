@@ -471,7 +471,24 @@ window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   loadCart();
+  
+  // ✅ INISIALISASI ANIMASI PRODUK SAAT HALAMAN PERTAMA KALI DIMUAT
+  // Hanya jalan sekali, saat DOM siap
+  if (document.querySelector('.products-grid')) {
+    // Tunggu sebentar agar produk sempat dirender (jika pakai renderProducts otomatis)
+    setTimeout(() => {
+      document.querySelectorAll('.product-card').forEach(el => {
+        // Hanya animasi yang di viewport atau dekat
+        const rect = el.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight + 200;
+        if (inView && !el.classList.contains('visible')) {
+          el.classList.add('visible');
+        }
+      });
+    }, 300);
+  }
 });
+
 // Tambahan
 // Buka keranjang saat klik tombol akses
 document.getElementById('cartAccessBtn')?.addEventListener('click', (e) => {
